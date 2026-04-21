@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+
+{% block title %}{{ page_title }}{% endblock %}
+
+{% block content %}
+<div class="d-flex justify-content-between align-items-center mb-4">
+    <h1>{{ page_title }}</h1>
+    <a href="{% url 'note_create' %}" class="btn btn-primary">+ Add note</a>
+</div>
+
+{% if notes %}
+    <div class="row">
+        {% for note in notes %}
+            <div class="col-md-4 mb-3">
+                <div class="card sticky-note h-100">
+                    <div class="card-body">
+                        <h5 class="card-title">
+                            <a href="{% url 'note_detail' pk=note.pk %}">{{ note.title }}</a>
+                        </h5>
+                        <p class="card-text">{{ note.content|truncatewords:20 }}</p>
+                        <small class="text-muted">{{ note.created_at|date:"d M Y, H:i" }}</small>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+{% else %}
+    <p class="text-muted">No notes yet. Click "Add note" to get started.</p>
+{% endif %}
+{% endblock %}

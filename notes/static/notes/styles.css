@@ -1,0 +1,25 @@
+.sticky-note {
+    background-color: #fff9a8;
+    border: none;
+    border-radius: 4px;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.15);
+    transform: rotate(-0.5deg);
+    transition: transform 0.15s ease;
+}
+
+.sticky-note:hover {
+    transform: rotate(0deg) translateY(-2px);
+}
+
+.sticky-note .card-title a {
+    color: #333;
+    text-decoration: none;
+}
+
+.sticky-note .card-title a:hover {
+    text-decoration: underline;
+}
+
+body {
+    background-color: #f5f5f0;
+}
