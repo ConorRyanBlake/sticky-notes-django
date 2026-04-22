@@ -50,19 +50,22 @@ With the venv active:
 python manage.py test notes
 
 ## Project structure
+
+```
 sticky_notes/
 ├── manage.py
 ├── requirements.txt
-├── sticky_notes/      # Django project config
+├── sticky_notes/          # Django project config
 │   ├── settings.py
 │   ├── urls.py
 │   └── ...
-└── notes/             # The notes app
-├── models.py      # Note model
-├── views.py       # CRUD views
-├── forms.py       # Note form
-├── urls.py        # URL routing
-├── admin.py       # Admin panel config
-├── tests.py       # Unit tests
-├── templates/     # HTML templates
-└── static/        # CSS
+└── notes/                 # The notes app
+    ├── models.py          # Note model
+    ├── views.py           # CRUD views
+    ├── forms.py           # Note form
+    ├── urls.py            # URL routing
+    ├── admin.py           # Admin panel config
+    ├── tests.py           # Unit tests
+    ├── templates/         # HTML templates
+    └── static/            # CSS
+```
