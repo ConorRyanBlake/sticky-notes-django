@@ -8,23 +8,27 @@
     <a href="{% url 'note_create' %}" class="btn btn-primary">+ Add note</a>
 </div>
 
+<p class="text-muted mb-4">
+    <small>Tip: click a note to view, edit, or delete it.</small>
+</p>
+
 {% if notes %}
-    <div class="row">
-        {% for note in notes %}
-            <div class="col-md-4 mb-3">
-                <div class="card sticky-note h-100">
-                    <div class="card-body">
-                        <h5 class="card-title">
-                            <a href="{% url 'note_detail' pk=note.pk %}">{{ note.title }}</a>
-                        </h5>
-                        <p class="card-text">{{ note.content|truncatewords:20 }}</p>
-                        <small class="text-muted">{{ note.created_at|date:"d M Y, H:i" }}</small>
-                    </div>
+<div class="row">
+    {% for note in notes %}
+    <div class="col-md-4 mb-3">
+        <a href="{% url 'note_detail' pk=note.pk %}" class="card-link">
+            <div class="card sticky-note h-100">
+                <div class="card-body">
+                    <h5 class="card-title">{{ note.title }}</h5>
+                    <p class="card-text">{{ note.content|truncatewords:20 }}</p>
+                    <small class="text-muted">{{ note.created_at|date:"d M Y, H:i" }}</small>
                 </div>
             </div>
-        {% endfor %}
+        </a>
     </div>
+    {% endfor %}
+</div>
 {% else %}
-    <p class="text-muted">No notes yet. Click "Add note" to get started.</p>
+<p class="text-muted">No notes yet. Click "Add note" to get started.</p>
 {% endif %}
 {% endblock %}
