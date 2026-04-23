@@ -20,34 +20,74 @@ A simple Django web application for creating, viewing, editing, and deleting sti
 ## Setup instructions
 
 ### 1. Clone the repository
-git clone https://github.com/ConorRyanBlake/sticky-notes-django.git
-cd sticky-notes-django
 
-### 2. Create and activate a virtual environment
+```
+git clone https://github.com/YOURUSERNAME/sticky-notes-django.git
+```
+
+```
+cd sticky-notes-django
+```
+
+### 2. Create a virtual environment
 
 On Windows:
+
+```
 python -m venv venv
+```
+
+```
 venv\Scripts\activate
+```
+
+On macOS or Linux:
+
+```
+python3 -m venv venv
+```
+
+```
+source venv/bin/activate
+```
 
 ### 3. Install the dependencies
+
+```
 pip install -r requirements.txt
+```
 
 ### 4. Run database migrations
-python manage.py makemigrations
-python manage.py migrate
 
-### 5. (Optional) Create a superuser to access the admin panel
+```
+python manage.py makemigrations
+```
+
+```
+python manage.py migrate
+```
+
+### 5. Create a superuser (optional, for admin access)
+
+```
 python manage.py createsuperuser
+```
 
 ### 6. Start the development server
+
+```
 python manage.py runserver
+```
 
 Open your browser at http://127.0.0.1:8000/ and you're in.
 
 ## Running the tests
 
 With the venv active:
+
+```
 python manage.py test notes
+```
 
 ## Project structure
 
@@ -55,17 +95,17 @@ python manage.py test notes
 sticky_notes/
 ├── manage.py
 ├── requirements.txt
-├── sticky_notes/          # Django project config
+├── sticky_notes/
 │   ├── settings.py
 │   ├── urls.py
 │   └── ...
-└── notes/                 # The notes app
-    ├── models.py          # Note model
-    ├── views.py           # CRUD views
-    ├── forms.py           # Note form
-    ├── urls.py            # URL routing
-    ├── admin.py           # Admin panel config
-    ├── tests.py           # Unit tests
-    ├── templates/         # HTML templates
-    └── static/            # CSS
+└── notes/
+    ├── models.py
+    ├── views.py
+    ├── forms.py
+    ├── urls.py
+    ├── admin.py
+    ├── tests.py
+    ├── templates/
+    └── static/
 ```
