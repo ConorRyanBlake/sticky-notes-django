@@ -98,4 +98,8 @@ sticky_notes/
     ├── tests.py
     ├── templates/
     └── static/
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 0b1ea739393159a5131ea83513e7dbe019d282a8
